@@ -1,7 +1,22 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "github.com/Bearox/go-test/greetings"
+    "log"
+)
 
 func main() {
-    fmt.Println("Hello world!")
+    log.SetPrefix("greetings:")
+    log.SetFlags(0)
+
+    message, err := greetings.Hello("")
+
+    if nil != err {
+        log.Fatal(err)
+    } else {
+        fmt.Println(message)
+    }
+    fmt.Println("process finished.")
+
 }

@@ -10,13 +10,16 @@ func main() {
     log.SetPrefix("greetings:")
     log.SetFlags(0)
 
-    message, err := greetings.Hello("")
+    names := []string{
+        "weiwen",
+        "Bearox",
+        "Davin",
+    }
+
+    messages, err := greetings.Hellos(names)
 
     if nil != err {
         log.Fatal(err)
-    } else {
-        fmt.Println(message)
     }
-    fmt.Println("process finished.")
-
+    fmt.Println(messages)
 }
